@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Instrument Serif Italic";
+    --font-body: "Lora";
+    --font-mono: "Geist Mono";
+    --radius: 0.625rem;
+
+    --background: 0.98 0.04 76;
+    --foreground: 0.22 0.06 30;
+    --card: 0.96 0.06 74;
+    --card-foreground: 0.22 0.06 30;
+    --popover: 0.96 0.06 74;
+    --popover-foreground: 0.22 0.06 30;
+
+    --primary: 0.78 0.08 75;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.87 0.12 74;
+    --secondary-foreground: 0.25 0.08 30;
+    --muted: 0.9 0.05 76;
+    --muted-foreground: 0.45 0.06 32;
+
+    --accent: 0.58 0.1 200;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.92 0.05 75;
+    --input: 0.92 0.05 75;
+    --ring: 0.78 0.08 75;
+
+    --chart-1: 0.65 0.18 45;
+    --chart-2: 0.58 0.12 200;
+    --chart-3: 0.7 0.1 80;
+    --chart-4: 0.55 0.15 35;
+    --chart-5: 0.65 0.14 60;
+
+    --sidebar: 0.96 0.06 74;
+    --sidebar-foreground: 0.22 0.06 30;
+    --sidebar-primary: 0.78 0.08 75;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.87 0.12 74;
+    --sidebar-accent-foreground: 0.25 0.08 30;
+    --sidebar-border: 0.92 0.05 75;
+    --sidebar-ring: 0.78 0.08 75;
+  }
+
+  .dark {
+    --background: 0.16 0.04 30;
+    --foreground: 0.94 0.04 76;
+    --card: 0.22 0.05 32;
+    --card-foreground: 0.92 0.04 76;
+    --popover: 0.26 0.06 35;
+    --popover-foreground: 0.92 0.04 76;
+
+    --primary: 0.88 0.08 75;
+    --primary-foreground: 0.16 0.04 30;
+
+    --secondary: 0.3 0.06 35;
+    --secondary-foreground: 0.88 0.05 74;
+    --muted: 0.28 0.05 33;
+    --muted-foreground: 0.62 0.05 30;
+
+    --accent: 0.72 0.12 200;
+    --accent-foreground: 0.16 0.04 30;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.94 0.04 76;
+
+    --border: 0.32 0.05 33;
+    --input: 0.32 0.05 33;
+    --ring: 0.88 0.08 75;
+
+    --chart-1: 0.75 0.16 50;
+    --chart-2: 0.7 0.14 200;
+    --chart-3: 0.82 0.12 85;
+    --chart-4: 0.68 0.18 40;
+    --chart-5: 0.76 0.16 65;
+
+    --sidebar: 0.22 0.05 32;
+    --sidebar-foreground: 0.92 0.04 76;
+    --sidebar-primary: 0.88 0.08 75;
+    --sidebar-primary-foreground: 0.16 0.04 30;
+    --sidebar-accent: 0.3 0.06 35;
+    --sidebar-accent-foreground: 0.88 0.05 74;
+    --sidebar-border: 0.32 0.05 33;
+    --sidebar-ring: 0.88 0.08 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Instrument Serif Italic";
+  src: url("/assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+  font-display: swap;
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .float-subtle {
+    animation: float-subtle 3s ease-in-out infinite;
+  }
+
+  .float-on-hover {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow
+      0.4s ease-out;
+  }
+
+  .float-on-hover:hover {
+    transform: translateY(-12px);
+  }
+
+  .card-tilt {
+    transform: perspective(1200px) rotateZ(-2deg);
+  }
+
+  .card-tilt:nth-child(even) {
+    transform: perspective(1200px) rotateZ(2deg);
+  }
+
+  @keyframes float-subtle {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  .parchment-texture {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(62, 39, 35, 0.03) 2px,
+      rgba(62, 39, 35, 0.03) 4px
+    );
+  }
+
+  .shadow-maritime {
+    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.15);
+  }
+
+  .shadow-maritime-lg {
+    box-shadow: 0 12px 24px rgba(62, 39, 35, 0.2);
+  }
+
+  .text-foreground-strong {
+    color: oklch(var(--foreground) / 0.95);
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "overview": "PathFinder is a free, beginner-friendly career and life guidance app with an antique maritime explorer journal aesthetic. It helps students discover careers across all fields in India, prepare for government jobs, explore fully funded international scholarships, start businesses, and follow a step-by-step guided career roadmap from beginner to expert.",
+  "features": [
+    "Guided step-by-step career roadmap with checkable milestones (beginner to expert)",
+    "Career quiz matching students to 70+ careers across all fields in India",
+    "Per-career progress tracking persisted in localStorage",
+    "Visual progress indicators on career detail pages",
+    "Global Voyage Registry with fully funded scholarships (MEXT, DAAD, Chevening, Fulbright)",
+    "Government Jobs guides (UPSC, SSC, Banking, Railways)",
+    "Business/Trade Routes startup guidance with Indian funding schemes",
+    "Career Inspiration with curated movies and series",
+    "Free Archives with curated YouTube channels and learning websites",
+    "Enterprise Presence tutorials for Fiverr, Upwork, LinkedIn, and Notion",
+    "Antique maritime journal aesthetic with sepia tones and parchment textures"
+  ],
+  "category": "education-career",
+  "tags": [
+    "career-guidance",
+    "education",
+    "india",
+    "scholarships",
+    "government-jobs",
+    "business",
+    "progress-tracker",
+    "maritime-aesthetic",
+    "beginner-friendly"
+  ],
+  "last_updated": "2026-04-17T16:30:19.769Z"
+}

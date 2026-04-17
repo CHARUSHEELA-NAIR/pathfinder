@@ -1,0 +1,73 @@
+// Version: 1.0.0
+type Career__173183445 =
+  {
+    description : Text;
+    field : Text;
+    freeResources : [Resource__817924823];
+    id : Text;
+    jobOutlook : Text;
+    keywords : [Text];
+    projects : [Text];
+    requiredSkills : [Text];
+    resumeTips : [Text];
+    roadmap : [Text];
+    salaryRange : Text;
+    title : Text
+  };
+type CatalogResource__146886200 =
+  {category : Text; description : Text; title : Text; url : Text};
+type Country__158345913 =
+  {
+    continent : Text;
+    id : Text;
+    name : Text;
+    overview : Text;
+    programs : [ScholarshipProgram__722746107];
+    whyChoose : Text
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type QuizOption__871560811 = {id : Nat; keywords : [Text]; text : Text};
+type QuizQuestion__680425338 =
+  {id : Nat; options : [QuizOption__871560811]; question : Text};
+type Resource__817924823 = {resourceType : Text; title : Text; url : Text};
+type ScholarshipProgram__722746107 =
+  {
+    applicationUrl : Text;
+    benefits : [Text];
+    coversLiving : Bool;
+    coversTravel : Bool;
+    coversTuition : Bool;
+    deadlineMonth : Text;
+    description : Text;
+    eligibility : Text;
+    fundingLevel : Text;
+    name : Text;
+    organization : Text
+  };
+actor {
+  stable careers :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Career__173183445]];
+      var elementIndex : Nat__490723111
+    };
+  stable countries :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Country__158345913]];
+      var elementIndex : Nat__490723111
+    };
+  stable questions :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?QuizQuestion__680425338]];
+      var elementIndex : Nat__490723111
+    };
+  stable resources :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?CatalogResource__146886200]];
+      var elementIndex : Nat__490723111
+    }
+};

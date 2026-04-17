@@ -1,0 +1,73 @@
+type ScholarshipProgram = 
+ record {
+   applicationUrl: text;
+   benefits: vec text;
+   coversLiving: bool;
+   coversTravel: bool;
+   coversTuition: bool;
+   deadlineMonth: text;
+   description: text;
+   eligibility: text;
+   fundingLevel: text;
+   name: text;
+   organization: text;
+ };
+type Resource = 
+ record {
+   resourceType: text;
+   title: text;
+   url: text;
+ };
+type QuizQuestion = 
+ record {
+   id: nat;
+   options: vec QuizOption;
+   question: text;
+ };
+type QuizOption = 
+ record {
+   id: nat;
+   keywords: vec text;
+   "text": text;
+ };
+type Country = 
+ record {
+   continent: text;
+   id: text;
+   name: text;
+   overview: text;
+   programs: vec ScholarshipProgram;
+   whyChoose: text;
+ };
+type CatalogResource = 
+ record {
+   category: text;
+   description: text;
+   title: text;
+   url: text;
+ };
+type Career = 
+ record {
+   description: text;
+   field: text;
+   freeResources: vec Resource;
+   id: text;
+   jobOutlook: text;
+   keywords: vec text;
+   projects: vec text;
+   requiredSkills: vec text;
+   resumeTips: vec text;
+   roadmap: vec text;
+   salaryRange: text;
+   title: text;
+ };
+service : {
+  getAllCareers: () -> (vec Career) query;
+  getCareerById: (id: text) -> (opt Career) query;
+  getCareersByField: (field: text) -> (vec Career) query;
+  getCountries: () -> (vec Country) query;
+  getCountryById: (id: text) -> (opt Country) query;
+  getQuizQuestions: () -> (vec QuizQuestion) query;
+  getResources: () -> (vec CatalogResource) query;
+  matchCareers: (answers: vec nat) -> (vec text) query;
+}
